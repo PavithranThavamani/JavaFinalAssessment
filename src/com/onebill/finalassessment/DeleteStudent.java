@@ -10,13 +10,38 @@ public class DeleteStudent {
 		System.out.println("Enter the student Id to delete");
 		int id1 = sc.nextInt();
 		Iterator<Student> it = list.iterator();
-		while (it.hasNext()) {
-			Student s = it.next();
-			if (s.getId() == id1) {
-				it.remove();
+		boolean flag = list.isEmpty();
+		if(flag != true) {
+			while (it.hasNext()) {
+				Student s = it.next();
+				if (s.getId() == id1) {
+					it.remove();
+				}
+				System.out.println("Deleted Successfully");
+			}
+		}else {
+			try {
+				throw new EmptyListException("List is Empty");
+			} catch (EmptyListException e) {
+				System.out.println(e.getMsg());
 			}
 		}
-		System.out.println("Deleted Successfully");
+//		try {
+//			boolean flag = list.isEmpty();
+//			if(flag != true) {
+//				
+//				while (it.hasNext()) {
+//					Student s = it.next();
+//					if (s.getId() == id1) {
+//						it.remove();
+//					}
+//					System.out.println("Deleted Successfully");
+//				}
+//			}
+//			throw new EmptyListException("List is Empty");
+//		} catch (EmptyListException e) {
+//			System.out.println(e.getMsg());
+//		}
 		System.out.println();
 		System.out.println("------------------------------");
 //		Iterator<Student> e = list.iterator();
