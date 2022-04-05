@@ -16,13 +16,16 @@ public class DeleteStudent {
 				Student s = it.next();
 				if (s.getId() == id1) {
 					it.remove();
+					System.out.println("Deleted Successfully");
+				}else {
+					System.out.println("Id not found..Enter valid Id");
 				}
-				System.out.println("Deleted Successfully");
 			}
 		}else {
 			try {
 				throw new EmptyListException("List is Empty");
 			} catch (EmptyListException e) {
+				e.printStackTrace();
 				System.out.println(e.getMsg());
 			}
 		}

@@ -18,6 +18,9 @@ public class AddStudent {
 			String name = sc.next();
 			System.out.println("Enter mark");
 			double mark = sc.nextDouble();
+			
+			
+			
 			System.out.println("Enter course");
 			String course = sc.next();
 
